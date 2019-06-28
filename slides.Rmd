@@ -21,7 +21,8 @@ background-size: 400px
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       message = FALSE,	
-                      warning = FALSE)
+                      warning = FALSE, 
+                      cache = TRUE)
 options(htmltools.dir.version = FALSE)
 ```
 
@@ -46,15 +47,23 @@ By the end of today you'll be able to do something like this:
 
 ## demo.....
 
+### install `tidyverse`
+
 ---
 # What this workshop is and is not
 
 .pull-left[
 
 Is an introduction to
-* the skills for organising reproducible analyses  
 * R  
-* some universal and highly transferable concepts  
+* some universal and highly transferable concepts 
+* the skills for organising reproducible analyses  
+ 
+
+![r logo](pics/RStudio-Logo-Flat.png)
+
+
+![python logo](pics/Python_logo_and_wordmark.svg.png)
 
 ]
 
@@ -63,9 +72,15 @@ Is an introduction to
 It is not
 * An introduction to statistics<sup>1</sup>  
 * Magic  
+
+&nbsp;  
+&nbsp;  
+&nbsp;  
+&nbsp;  
+[1] but ...
 ]
 
-[1] but ...
+
 ---
 # Workshop overview
 
@@ -132,7 +147,8 @@ background-size: 200px
 
 ---
 class: inverse, center, middle
-# Introduction 1000 - 1115
+# Introduction 
+## 1000 - 1115
 
 ---
 background-image: url(pics/rationale1.png)
@@ -140,7 +156,23 @@ background-position: 50% 35%
 background-size: 600px
 
 # Rationale for scripting analysis
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+.pull-left[
+## Generating the results
+]
 
+.pull-right[
+## Analysing and reporting them
+]
 ---
 background-image: url(pics/rationale2.png)
 background-position: 50% 35%
@@ -167,18 +199,21 @@ background-size: 800px
 
 ## Why R? 
 
-* Open source and free  
-
+* Open source and free
 --
-  But so is Python
+.......But so is Python
   
 --
 
 * R caters to users who do not see themselves as programmers, but then allows them to slide gradually into programming  
 
+![biologists](pics/biologist1.png)
+--
+
 * Language for data analysis and graphics  
 
 --
+
 * Community - welcoming, inclusive.  
   [RForwards](https://forwards.github.io/)  
   [RLadies](https://rladies.org/)
@@ -186,8 +221,7 @@ background-size: 800px
 --
 
 * R Markdown  
-  R's "killer feature"  
-  Super-charged reproducibility!
+  R's "killer feature"  .......Super-charged reproducibility!
 
 ---
 
@@ -212,14 +246,15 @@ There is an [RStudio cheatsheet](rstudio-ide.pdf) which covers more advanced RSt
 
 * the panels
 * making yourself comforatable
-* types of of R files: .R, .RData . RHistory
 * typing in the console sending commands
 * using R as a calculator
 * assigning values
 * where to see objects
-* using a script - typing doesn't make it happen, sending commands, highlighting
+* using a script - typing doesn't make it happen you need to execute
+* comments \#
 * data types and structures
-* `c()`, `class()` and `str()`
+* functions `c()`, `class()` and `str()`
+* types of of R files: .R, .RData . RHistory
 
 
 ---
@@ -357,11 +392,14 @@ Make a [new script](pics/newscript.png) file called RBS_am.R to carry out the re
 
 Make a vector `n` that holds the numbers 0 to 5. 
 ```{r}
+# the number of males in a clutch of five
 n <- c(0, 1, 2, 3, 4, 5)
 ```
 
-
 * Write your command in the script file  
+* Notice I have used a comment  
+--
+
 * Make sure you have your cursor on the line you want to execute  
 * Run it using the ![Run](pics/runbutton.png) button or doing Ctrl+Enter<sup>1</sup>. 
 
@@ -396,13 +434,14 @@ It's a numeric vector []
 Now create a vector called `freq` containing the numbers of nests with 0 to 5 males. 
 
 ```{r}
-
+# the number of nests with 0 to 5 males
 freq <- c(4, 13, 14, 15, 13, 5)
 ```
 --
 We can use `sum(freq)` to check we get the total number of nests expected, 64
 
 ```{r}
+# the total number of nests
 sum(freq)
 ```
 
@@ -441,18 +480,21 @@ $$\frac{163}{64} = 2.55$$
 .pull-left[
 Find the total number of nests
 ```{r}
+# total number of nests
 total_nests <- sum(freq)
 ```
  
 
 Find the total number of males
 ```{r}
+# total number of males
 total_males <- sum(n * freq)
 ```
  
 
 Find the mean number of males per nest
 ```{r}
+# mean number males/nest
 total_males/total_nests
 ```
 ]
@@ -578,7 +620,7 @@ Skip to the next slide if you want more challenge.
 --
 
 .pull-right[
-```{r ,fig.width=5,fig.height=5}
+```{r ,fig.width=4,fig.height=4}
 barplot(freq, 
         names.arg = n,
         xlab = "Number of males",
@@ -598,6 +640,7 @@ Skip to the next slide if you want more challenge.
 
 <style>
 div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+div.grey { background-color:#d3d3d3; border-radius: 0px; padding: 0px;}
 </style>
 
 <div class = "blue">
@@ -610,7 +653,7 @@ Make your code easier to read by using white space and new lines
 </div>
 
 .pull-right[
-```{r ,fig.width=5,fig.height=5}
+```{r ,fig.width=4,fig.height=4}
 barplot(freq, 
         names.arg = n,
         xlab = "Number of males",
@@ -635,6 +678,7 @@ You can look these up as follows:
 
 [By hexadecimal code](pics/colourhex.pdf)
 
+Skip to the next slide if you want more challenge.
 ]
 
 --
@@ -810,7 +854,7 @@ background-size: 100px
 
 You can add an axis label like this:
 
-```{r fig.width=4,fig.height=4,eval=FALSE}
+```{r eval=FALSE}
 ggplot(data = nest_data, aes(x = n, y = freq)) +
   geom_bar(stat = "identity") +
   xlab("Number of males")
@@ -824,23 +868,19 @@ ggplot(data = nest_data, aes(x = n, y = freq)) +
 
 ```
 ]
-
---
-
 .pull-right[
-Each 'layer' is added to the `ggplot()` command with a `+`
+Each 'layer' is added to the `ggplot()` command with a '+'
 
 --
 
 <div class = "blue">
-
 **We can customise much more and will return to this later.....**
 
-<div>
-
 <small>[ggplot cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) if you can't wait</small>
-
 ]
+</div>
+
+
 
 ---
 
@@ -950,6 +990,10 @@ The columns are the variables; the rows are the observations
 
 --
 
+To refer a column inside a dataframe (a single column data) we need to use the dollar notation: `dataframe$columnname`
+
+--
+
 So to output all of the one column we can use:
 ```{r}
 pigeon$interorbital
@@ -1044,11 +1088,21 @@ background-size: 200px
 
 This section will teach you about three concepts:
 
+--
+
 1. 'working directories', 'paths' and  'relative paths' 
+
+--
+
 2. dealing with data in more than group  
+
+--
+
 3. the concept of 'tidy' data
 
-We will work with the interorbital distances of domestion pigeons in two two different populations: A and B
+--
+
+We will work with the interorbital distances of domestion pigeons in two different populations: A and B
 
 ---
 background-image: url(pics/interorbital.png)
@@ -1062,7 +1116,7 @@ It is good practice to organise your files into a folder structure.
 
 For example, I often use:
 
-![a folder stemcells with 4 subfolders - figures, processed data, raw data and scripts](pics/dir_structure.png)
+![a folder called stemcells with 4 subfolders - figures, processed data, raw data and scripts](pics/dir_structure.png)
 
 ---
 background-image: url(pics/interorbital.png)
@@ -1073,6 +1127,14 @@ background-size: 200px
 ## Importing 2
 
 Make a folder in your working directory called 'data'
+
+You can do this either RStudio  - see the bottom right Files panel
+
+or
+
+in Windows explorer
+
+--
 
 Forgotten where you are? Use
 ```{r eval=FALSE}
@@ -1163,12 +1225,33 @@ background-size: 200px
 ## Tidy format
 
 Instead of having a population in each column, we very often have, **and want**, data organised so the measurements are all in one column and a second column gives the group. This format is described as 'tidy'<sup>1</sup>
+
 Tidy data has a variable in each column and only one observation (case) per row.
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<small>[1] Wickham, H. (2014), "Tidy Data," Journal of Statistical Software, 59, available at [http://www.jstatsoft.org/article/view/v059i10](http://www.jstatsoft.org/article/view/v059i10)</small>
+---
+background-image: url(pics/interorbital.png)
+background-position: 95% 5%
+background-size: 200px
+
+# Working with Data 
+## Tidy format
+
+Tidy data has a variable in each column and only one observation (case) per row.
+
+Suppose we had just 3 individuals in each population:
 
 .pull-left[
 **NOT TIDY!**
 ```{r echo=FALSE}
-knitr::kable(pigeon2[1:4,], 
+knitr::kable(pigeon2[1:3,], 
              format = "html")
 ```
 ]
@@ -1181,14 +1264,12 @@ pigeon3 <- gather(data = pigeon2,
 .pull-right[
 **TIDY!**
 ```{r echo=FALSE}
-knitr::kable(head(pigeon3[38:41,]), 
+knitr::kable(head(pigeon3[c(1:3,41:43),]), 
              format = "html",
              row.names = FALSE)
 ```
 ]
 
-&nbsp;  
-<small>[1] Wickham, H. (2014), "Tidy Data," Journal of Statistical Software, 59, available at [http://www.jstatsoft.org/article/view/v059i10](http://www.jstatsoft.org/article/view/v059i10)</small>
 
 ---
 background-image: url(pics/interorbital.png)
@@ -1243,6 +1324,7 @@ mean(pigeon3$distance)
 ```
 
 We will get the mean of the two populations combined.
+
 --
 
 To get the mean of each population we use `tapply()`. 
@@ -1281,7 +1363,9 @@ tapply(pigeon3$distance, pigeon3$population, mean)
 
 --
 
-Find the number of cases and the variance of each group
+Find the number of cases in each group
+
+Finshed and need more challenge? Go to the next slide
 
 --
 
@@ -1290,8 +1374,18 @@ The number of cases
 tapply(pigeon3$distance, pigeon3$population, length)
 ```
 
+---
+background-image: url(pics/interorbital.png)
+background-position: 95% 5%
+background-size: 200px
+
+# Summarising - extra challenges
+
+Find the variance in each population
+
+Finshed and need more challenge? Go to the next slide
+
 --
-The variance
 
 ```{r}
 tapply(pigeon3$distance, pigeon3$population, var)
@@ -1302,10 +1396,10 @@ background-image: url(pics/interorbital.png)
 background-position: 95% 5%
 background-size: 200px
 
-# Working with Data 
-## Summarising multi-group data
+# Summarising - extra challenges
 
 Calculate the standard errors for each group.
+
 Standard errors are given by 
 
 $$s.e. = \frac{s.d.}{\sqrt{n}} $$
@@ -1323,8 +1417,7 @@ background-image: url(pics/interorbital.png)
 background-position: 95% 5%
 background-size: 200px
 
-# Working with Data 
-## Summarising multi-group data
+# Summarising - extra challenges
 
 Calculate the standard errors for each group.
 
@@ -1349,12 +1442,28 @@ background-size: 200px
 # Working with Data 
 ## Plotting multi-group data
 
-```{r fig.height=4, fig.width=4}
+```{r eval=FALSE}
 ggplot(data = pigeon3, aes(x = distance)) +
   geom_histogram(bins = 10, col = "black") +
   xlab("Interorbital distance (mm)")
   
 ```
+
+
+.pull-left[
+```{r fig.height=4, fig.width=4, echo=FALSE}
+ggplot(data = pigeon3, aes(x = distance)) +
+  geom_histogram(bins = 10, col = "black") +
+  xlab("Interorbital distance (mm)")
+  
+```
+]
+
+.pull-right[
+
+Plots the whole data set without separating the populations
+
+]
 
 ---
 background-image: url(pics/interorbital.png)
@@ -1567,4 +1676,467 @@ class: inverse, center, middle
 # Lunch!
 
 ---
+# Workshop overview
 
+
+```{r echo = FALSE}
+timetable <- read.table("slide_data/timetable.txt", 
+                        header = T, 
+                        colClasses = c("character", 
+                                       "character", 
+                                       "character"))
+DT::datatable(
+  timetable,
+  fillContainer = FALSE, 
+  options = list(pageLength = 4),
+  rownames = FALSE)
+```
+
+---
+class: inverse, center, middle
+
+# Reproducible Reports using R Markdown
+## 1315 - 1430
+
+---
+
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfaHl92gPSWI4jRG79Un6d4OhXWsPGhN0YwVV4kgfAQgCKgBg/viewform?embedded=true" width="500" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+---
+# How do you work?
+
+* What program do you analyse your data in?  
+
+
+* What program do you plot your data in?  
+
+
+* What program do you use to write up the results to submit to a journal (or similar)?  
+
+
+* What is your process for getting your summary data, statistical results, tables and figures in to your report?  
+
+
+--
+
+* What do you do when you get additional data that increases your sample sizes?  
+
+--
+
+* What do you do if you wrote in Word formated for one journal and now have to submit in PDF formated for another?
+
+--
+
+Typically people analyse, plot and write up in different programs. Graphs are saved to files and copied and pasted into the final report. 
+
+This process relies on manual labour. If the data changes, the author must repeat the entire process to update the report.
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+The brilliance of R Markdown is that you can use a **single R Markdown file** to:
+
+* save and execute code  
+
+* do all your data processing, analysis and plotting
+
+* generate high quality reports that can be shared with an audience
+
+
+This is a time-efficient and reproducible way to write!
+
+![cool-emoji](pics/cool.png)
+
+
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+## Many output formats are supported!
+
+.pull-left[
+![picture of some of the formats](pics/rmarkdownoutputformats.png)
+]
+.pull-right[
+* Word
+* Webpages - many styles and themes
+* PDF
+* journal article formats for many journals
+* webslides
+* powerpoint
+* books
+* blogs
+* posters
+* web applications including interactive
+
+]
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+## Let's get started...organising
+
+You are going to work with some made-up data on the myoglobin content in the skeletal muscle of three species of seal
+
+--
+
+Make a folder called 'seals'
+
+--
+
+Inside 'seals', make folders called 'raw_data' and 'processed_data'
+
+--
+
+.pull-right[
+** I strongly recommend avoiding spaces in names of files, folders and variable names** 
+
+R can cope with them....  but they can often confuse humans!
+]
+--
+
+Save a copy of [seal.txt](seals/raw_data/seal.txt) to the 'raw_data' folder
+
+--
+
+Set your working directory to 'seals'
+
+---
+
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+## Live demo
+
+Just watch for a while....
+
+---
+
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+## Key points from the demo
+
+
+* mixes text and code  
+* human readable  
+* YAML header between the  \-\-\-
+* code chunk options control whether the code and its output end up in your 'knitted' document  
+* comments   
+  * in a code chunk the \# is still used for comments  
+  * in the text a comment is written like this  <!\-\- a comment \-\->
+  * but use Ctrl+Shift+C  
+* \# in the text indicate headings  
+
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+## Your own R markdown file
+
+File | New File | R Markdown
+
+--
+
+Delete everything except the YAML header the first code chunk
+
+--
+
+Add your name, and a title 
+
+You could copy and paste a title from [paper.html](seals/paper.html)
+
+--
+
+Set some **default** code chunk options. I recommend these:
+
+
+````
+```{r setup, include=FALSE}`r ''`
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE,
+                      message = FALSE)
+```
+````
+
+`echo = FALSE` means the code will not be included by default - this is normally what you want in a report.
+
+Any output **is** included by default
+ 
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+Add a little introduction - again you could copy and paste.
+Save your file
+
+--
+
+Use Insert | R to add a code chunk
+
+Load the tidyverse
+
+.pull-left[
+````
+```{r packages}`r ''`
+library(tidyverse)
+
+```
+````
+]
+.pull-right[
+* `r`indicates it is an R code chunk
+* `packages` is just a name for the chunk. Naming chunks makes debugging easier.
+
+]
+
+--
+
+Add a heading for the Methods section
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+Insert a code chunk for importing the data
+
+
+````
+```{r import}`r ''`
+# Data import
+# the data are organised in to three columns, one for each species. 
+seal <- read.table("raw_data/seal.txt", header = TRUE)
+```
+````
+
+--
+
+Note you can run the code interactively to check your progress and the output will be shown in the Rmd document.
+
+
+````
+```{r import}`r ''`
+# Data import
+# the data are organised in to three columns, one for each species. 
+seal <- read.table("raw_data/seal.txt", header = TRUE)
+str(seal)
+```
+````
+
+````
+'data.frame':	30 obs. of  3 variables:
+ $ Harbour    : num  49.7 51 41.6 45.6 39.4 ...
+ $ Weddell    : num  55.4 40.1 46.3 29.8 52.5 ...
+ $ Bladdernose: num  56.2 48.4 37.8 42.8 27 ...
+```` 
+
+
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+
+Insert a code chunk for tidying the data and writing it out to a file
+
+````
+```{r tidy}`r ''`
+# put the data in tidy format
+seal2 <- gather(data = seal, species, myoglobin)
+
+# write tidy data to processed
+write.table(seal2, 
+            "processed_data/seal2.txt",
+            row.names = FALSE)
+```
+````
+
+--
+
+Insert a code chunk for summarising the data
+
+You may need to install `Rmisc` first.
+
+
+````
+```{r summarise}`r ''`
+sealsummary <- Rmisc::summarySE(data = seal2,
+                         measurevar = "myoglobin",
+                         groupvars = "species")
+```
+````
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+Live demo of what is in `sealsummary`
+
+Knit your file
+
+--
+
+Add `sealsummary` to the code chunk and knit again  
+
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+## Inline code
+
+Code results can be inserted directly into the text of a .Rmd file using inline code.
+
+Inline code goes between ` `r` and ` ` ` . 
+
+For example by writing: 
+
+The squareroot of 2 is ` `r`  `sqrt(2)` ` ` ` 
+
+you will get 
+
+The squareroot of 2 is  `r sqrt(2)`
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+## Inline code
+
+We could add
+
+The highest mean is ` `r`  `max(sealsummary$myoglobin)` ` ` `
+
+to our text. 
+
+When we knit the document we would get
+
+The highest mean is 49.01033
+
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+
+Insert a code chunk extracting values to make inline reporting easier
+
+Don't worry too much about completely understanding the code
+
+````
+```{r extract}`r ''`
+# extract values for inline reporting
+
+highestmean <- max(sealsummary$myoglobin)
+highestse <- sealsummary$se[sealsummary$myoglobin == highestmean]
+highestspp <- sealsummary$species[sealsummary$myoglobin == highestmean]
+lowestmean <- min(sealsummary$myoglobin)
+lowestse <- sealsummary$se[sealsummary$myoglobin == lowestmean]
+lowestspp <- sealsummary$species[sealsummary$myoglobin == lowestmean]
+
+```
+````
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+## Special characters
+
+You can include special characters in a markdown document using LaTeX markup. This has \$ signs on the outside and uses backslashes and curly braces to indicate that what follows should be interpreted as a special character of special formatting.
+
+For example, to get $\bar{x} \pm s.e.$ you write `$\bar{x} \pm s.e.$`
+
+
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+
+Go to live demo of document
+
+---
+background-image: url(pics/rmarkdown.png)
+background-position: 95% 5%
+background-size: 100px
+
+# R Markdown
+
+R Markdown cheatsheet https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+
+RStudio’s guide http://rmarkdown.rstudio.com/index.html
+
+DataCamp’s Reporting with R Markdown course - the first part is free
+googling!
+
+---
+background-image: url(pics/Royal_Society_of_Biology.png)
+background-position: 0.5% 0.5%
+background-size: 350px
+
+
+class: inverse, center, middle
+
+# Congratulations!
+
+## Keep practising!
+
+### Emma Rand 
+#### emma.rand@york.ac.uk
+#### Twitter: [@er13_r](https://twitter.com/er13_r)
+#### github: 3mmarand
+#### blog: https://buzzrbeeline.blog/
+
+
+---
