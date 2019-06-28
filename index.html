@@ -46,7 +46,6 @@ By the end of today you'll be able to do something like this:
 
 ## demo.....
 
-### install `tidyverse`
 
 ---
 # What this workshop is and is not
@@ -84,8 +83,8 @@ It is not
 # Workshop overview
 
 
-<div id="htmlwidget-d052273c06b184840ac9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d052273c06b184840ac9">{"x":{"filter":"none","fillContainer":false,"data":[["0930","1000","1115","1230","1315","1430","1445","1600"],["Registration and Coffee","Introduction","Working with Data","Lunch","Reproducible Reports using R Markdown","Coffee","Working with your own data","Departure"],["Assistance with installation of R and RStudio if needed.","Finding your way round RStudio, typing in data, performing calculations and making a simple figure.  Using the manual.","Importing, visualising and summarizing data, the concept of 'tidy' data and some typical data tidying tasks.","","More advanced figures, Organising analyses, updatable reports in a variety of output formats.","","Create a report and figure for your data or use one of our examples.",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Time<\/th>\n      <th>Topic<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-16f6ad0b6dfb7f7c98e4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-16f6ad0b6dfb7f7c98e4">{"x":{"filter":"none","fillContainer":false,"data":[["0930","1000","1115","1230","1315","1430","1445","1600"],["Registration and Coffee","Introduction","Working with Data","Lunch","Reproducible Reports using R Markdown","Coffee","Working with your own data","Departure"],["Assistance with installation of R and RStudio if needed.","Finding your way round RStudio, typing in data, performing calculations and making a simple figure.  Using the manual.","Importing, visualising and summarizing data, the concept of 'tidy' data and some typical data tidying tasks.","","More advanced figures, Organising analyses, updatable reports in a variety of output formats.","","Create a report and figure for your data or use one of our examples.",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Time<\/th>\n      <th>Topic<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -369,7 +368,7 @@ You are going to make this data, find the mean number of males per nest...
 ... and plot it
 
 
-![](slides_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
 ]
 
 
@@ -386,11 +385,13 @@ In Windows explorer, make yourself a folder for this work.
 
 --
 
-In RStudio, [set your working directory](pics/menusetwd.png) to the folder you created above.  
+In RStudio, [set your working directory](pics/menusetwd.png) to the folder you created above&lt;sup&gt;1&lt;/sup&gt;.  
 
 --
 
 Make a [new script](pics/newscript.png) file called RBS_am.R to carry out the rest of the work.  
+
+&lt;small&gt;[1] A better way to work longer term is to use [Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) &lt;/small&gt;
 
 ---
 # Typing in data, calcs, plots
@@ -604,7 +605,7 @@ Create simple barplot like this:
 barplot(freq)
 ```
 
-![](slides_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
 
 ]
 ---
@@ -661,7 +662,7 @@ Open the manual page using:
 barplot(freq, names.arg = n)
 ```
 
-![](slides_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
 ]
 
 
@@ -700,7 +701,7 @@ barplot(freq,
         ylab = "Number of nests")
 ```
 
-![](slides_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
 ]
 ---
 
@@ -736,7 +737,7 @@ barplot(freq,
         ylab = "Number of nests")
 ```
 
-![](slides_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -771,7 +772,7 @@ barplot(freq,
         col = "#FF3030")
 ```
 
-![](slides_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
 ]
 ---
 # Plotting - extra challenges
@@ -795,7 +796,7 @@ barplot(freq,
         col = c("red", "blue", "yellow"))
 ```
 
-![](slides_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
 ]
 ---
 
@@ -918,7 +919,7 @@ ggplot(data = nest_data, aes(x = n, y = freq)) +
 ```
 
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
 ]
 
 --
@@ -952,7 +953,7 @@ ggplot(data = nest_data, aes(x = n, y = freq)) +
   xlab("Number of males")
 ```
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
 ]
 .pull-right[
 Each 'layer' is added to the `ggplot()` command with a '+'
@@ -1009,10 +1010,10 @@ class: inverse, center, middle
 &lt;/tbody&gt;
 &lt;/table&gt;
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-29-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-29-1.png)&lt;!-- --&gt;
 ]
 .pull-right[
-![](slides_files/figure-html/unnamed-chunk-30-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-30-1.png)&lt;!-- --&gt;
 ]
 
 ---
@@ -1166,7 +1167,7 @@ ggplot(data = pigeon, aes(x = interorbital)) +
   xlab("Interorbital distance (mm)")
 ```
 
-![](slides_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-38-1.png)&lt;!-- --&gt;
 ---
 background-image: url(pics/interorbital.png)
 background-position: 95% 5%
@@ -1182,7 +1183,7 @@ ggplot(data = pigeon, aes(x = interorbital)) +
   xlab("Interorbital distance (mm)")
 ```
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-40-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-40-1.png)&lt;!-- --&gt;
 ]
 --
 
@@ -1667,7 +1668,7 @@ ggplot(data = pigeon3, aes(x = distance)) +
 
 
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-57-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-57-1.png)&lt;!-- --&gt;
 ]
 
 .pull-right[
@@ -1695,7 +1696,7 @@ background-size: 200px
 
 .pull-left[
 
-![](slides_files/figure-html/unnamed-chunk-59-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-59-1.png)&lt;!-- --&gt;
 ]
 
 --
@@ -1730,7 +1731,7 @@ ggplot(data = pigeon3, aes(x = distance, fill = population)) +
 ```
 
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-61-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-61-1.png)&lt;!-- --&gt;
 ]
 
 --
@@ -1756,7 +1757,7 @@ ggplot(data = pigeon3, aes(x = distance, fill = population))  +
 ```
 
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-63-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-63-1.png)&lt;!-- --&gt;
 ]
 
 
@@ -1782,7 +1783,7 @@ ggplot(data = pigeon3, aes(x = distance, fill = population))  +
 ```
 
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-65-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-65-1.png)&lt;!-- --&gt;
 ]
 
 
@@ -1808,7 +1809,7 @@ background-size: 200px
 ```
 
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-67-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-67-1.png)&lt;!-- --&gt;
 ]
 
 
@@ -1837,7 +1838,7 @@ ggplot(data = pigeon3, aes(x = population, y = distance))  +
 ```
 
 .pull-left[
-![](slides_files/figure-html/unnamed-chunk-69-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/unnamed-chunk-69-1.png)&lt;!-- --&gt;
 ]
 
 
@@ -1856,8 +1857,8 @@ class: inverse, center, middle
 # Workshop overview
 
 
-<div id="htmlwidget-d052273c06b184840ac9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d052273c06b184840ac9">{"x":{"filter":"none","fillContainer":false,"data":[["0930","1000","1115","1230","1315","1430","1445","1600"],["Registration and Coffee","Introduction","Working with Data","Lunch","Reproducible Reports using R Markdown","Coffee","Working with your own data","Departure"],["Assistance with installation of R and RStudio if needed.","Finding your way round RStudio, typing in data, performing calculations and making a simple figure.  Using the manual.","Importing, visualising and summarizing data, the concept of 'tidy' data and some typical data tidying tasks.","","More advanced figures, Organising analyses, updatable reports in a variety of output formats.","","Create a report and figure for your data or use one of our examples.",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Time<\/th>\n      <th>Topic<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5c6135135ed96956e713" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5c6135135ed96956e713">{"x":{"filter":"none","fillContainer":false,"data":[["0930","1000","1115","1230","1315","1430","1445","1600"],["Registration and Coffee","Introduction","Working with Data","Lunch","Reproducible Reports using R Markdown","Coffee","Working with your own data","Departure"],["Assistance with installation of R and RStudio if needed.","Finding your way round RStudio, typing in data, performing calculations and making a simple figure.  Using the manual.","Importing, visualising and summarizing data, the concept of 'tidy' data and some typical data tidying tasks.","","More advanced figures, Organising analyses, updatable reports in a variety of output formats.","","Create a report and figure for your data or use one of our examples.",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Time<\/th>\n      <th>Topic<\/th>\n      <th>Detail<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 class: inverse, center, middle
@@ -2278,14 +2279,41 @@ background-image: url(pics/rmarkdown.png)
 background-position: 95% 5%
 background-size: 100px
 
-# R Markdown
+# R Markdown Resources
 
 R Markdown cheatsheet https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
 
+R Markdown: The Definitive Guide
+Yihui Xie, J. J. Allaire, Garrett Grolemund
+https://bookdown.org/yihui/rmarkdown/
+
 RStudio’s guide http://rmarkdown.rstudio.com/index.html
 
-DataCamp’s Reporting with R Markdown course - the first part is free
-googling!
+
+---
+# Credits and References
+&lt;small&gt;
+Allaire, J.J., Xie, Y., McPherson, J., Luraschi, J., Ushey, K., Atkins, A., Wickham, H., Cheng, J., Chang, W. and Iannone, R. (2019). rmarkdown: Dynamic Documents for R. R  package version 1.12. URL https://rmarkdown.rstudio.com.
+
+
+Python Software Foundation. Python Language Reference, version 2.7. Available at http://www.python.org
+
+R Core Team (2018). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+Wickham, H. (2014), "Tidy Data," Journal of Statistical Software, 59, available at http://www.jstatsoft.org/article/view/v059i10
+
+Wickham, H. &amp; Grolemund, G. (2016) R for Data Science. O’Reilly. http://r4ds.had.co.nz/
+
+Wickham, H. (2017). tidyverse: Easily Install and Load the 'Tidyverse'. R package version 1.2.1. https://CRAN.R-project.org/package=tidyverse
+
+Wilkinson, L. (2005) The Grammar of Graphics. Statistics and Computing. 2nd ed. New York, NY: Springer
+
+Xie, Y. and Allaire J.J. and Grolemund, G. (2018). R Markdown: The Definitive Guide. Chapman and Hall/CRC. ISBN 9781138359338. URL https://bookdown.org/yihui/rmarkdown.
+
+Xie, Y. (2019). xaringan: Presentation Ninja. R package version 0.9.  https://CRAN.R-project.org/package=xaringan
+
+&lt;/small&gt;
+
 
 ---
 background-image: url(pics/Royal_Society_of_Biology.png)
@@ -2295,18 +2323,13 @@ background-size: 350px
 
 class: inverse, center, middle
 
-# Congratulations!
+# Congratulations! Keep practising!
 
-## Keep practising!
-
-### Emma Rand 
-#### emma.rand@york.ac.uk
-#### Twitter: [@er13_r](https://twitter.com/er13_r)
-#### github: 3mmarand
+### Emma Rand &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; emma.rand@york.ac.uk
+#### Twitter: [@er13_r](https://twitter.com/er13_r) &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; github: 3mmarand
 #### blog: https://buzzrbeeline.blog/
 
-
----
+&lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;&lt;img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"&gt;Royal Society of Biology CPD: An Introduction to Reproducible Analyses in R&lt;/span&gt; by &lt;span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName"&gt;Emma Rand&lt;/span&gt; is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

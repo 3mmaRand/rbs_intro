@@ -21,8 +21,7 @@ background-size: 400px
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       message = FALSE,	
-                      warning = FALSE, 
-                      cache = TRUE)
+                      warning = FALSE)
 options(htmltools.dir.version = FALSE)
 ```
 
@@ -47,7 +46,6 @@ By the end of today you'll be able to do something like this:
 
 ## demo.....
 
-### install `tidyverse`
 
 ---
 # What this workshop is and is not
@@ -379,11 +377,13 @@ In Windows explorer, make yourself a folder for this work.
 
 --
 
-In RStudio, [set your working directory](pics/menusetwd.png) to the folder you created above.  
+In RStudio, [set your working directory](pics/menusetwd.png) to the folder you created above<sup>1</sup>.  
 
 --
 
 Make a [new script](pics/newscript.png) file called RBS_am.R to carry out the rest of the work.  
+
+<small>[1] A better way to work longer term is to use [Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects) </small>
 
 ---
 # Typing in data, calcs, plots
@@ -2111,14 +2111,41 @@ background-image: url(pics/rmarkdown.png)
 background-position: 95% 5%
 background-size: 100px
 
-# R Markdown
+# R Markdown Resources
 
 R Markdown cheatsheet https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
 
+R Markdown: The Definitive Guide
+Yihui Xie, J. J. Allaire, Garrett Grolemund
+https://bookdown.org/yihui/rmarkdown/
+
 RStudio’s guide http://rmarkdown.rstudio.com/index.html
 
-DataCamp’s Reporting with R Markdown course - the first part is free
-googling!
+
+---
+# Credits and References
+<small>
+Allaire, J.J., Xie, Y., McPherson, J., Luraschi, J., Ushey, K., Atkins, A., Wickham, H., Cheng, J., Chang, W. and Iannone, R. (2019). rmarkdown: Dynamic Documents for R. R  package version 1.12. URL https://rmarkdown.rstudio.com.
+
+
+Python Software Foundation. Python Language Reference, version 2.7. Available at http://www.python.org
+
+R Core Team (2018). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+Wickham, H. (2014), "Tidy Data," Journal of Statistical Software, 59, available at http://www.jstatsoft.org/article/view/v059i10
+
+Wickham, H. & Grolemund, G. (2016) R for Data Science. O’Reilly. http://r4ds.had.co.nz/
+
+Wickham, H. (2017). tidyverse: Easily Install and Load the 'Tidyverse'. R package version 1.2.1. https://CRAN.R-project.org/package=tidyverse
+
+Wilkinson, L. (2005) The Grammar of Graphics. Statistics and Computing. 2nd ed. New York, NY: Springer
+
+Xie, Y. and Allaire J.J. and Grolemund, G. (2018). R Markdown: The Definitive Guide. Chapman and Hall/CRC. ISBN 9781138359338. URL https://bookdown.org/yihui/rmarkdown.
+
+Xie, Y. (2019). xaringan: Presentation Ninja. R package version 0.9.  https://CRAN.R-project.org/package=xaringan
+
+</small>
+
 
 ---
 background-image: url(pics/Royal_Society_of_Biology.png)
@@ -2128,15 +2155,11 @@ background-size: 350px
 
 class: inverse, center, middle
 
-# Congratulations!
+# Congratulations! Keep practising!
 
-## Keep practising!
-
-### Emma Rand 
-#### emma.rand@york.ac.uk
-#### Twitter: [@er13_r](https://twitter.com/er13_r)
-#### github: 3mmarand
+### Emma Rand &nbsp;&nbsp;&nbsp;&nbsp; emma.rand@york.ac.uk
+#### Twitter: [@er13_r](https://twitter.com/er13_r) &nbsp;&nbsp;&nbsp;&nbsp; github: 3mmarand
 #### blog: https://buzzrbeeline.blog/
 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Royal Society of Biology CPD: An Introduction to Reproducible Analyses in R</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Emma Rand</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
----
