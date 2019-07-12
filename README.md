@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3333877.svg)](https://doi.org/10.5281/zenodo.3333877)
 # Introduction to Reproducible Analyses in R
 
 A [Royal Society of Biology](https://www.rsb.org.uk/) one-day Continuing Professional Development course held at the [Department of Biology, University of York](https://www.york.ac.uk/biology/) 24 June 2019
